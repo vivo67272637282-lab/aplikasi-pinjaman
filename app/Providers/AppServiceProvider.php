@@ -16,7 +16,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Di Vercel, /tmp adalah satu-satunya folder yang writable
+        if (isset($_ENV['VERCEL']) || getenv('VERCEL')) {
+            $tmpPath = '/tmp/laravel';
+            foreach (['cache', 'views', 'sessions', 'testing', 'logs'] as $dir) {
+                $path = $tmpPath . '/framework/' . $dir;
+                if (!is_dir($path)) {
+                    mkdir($path, 0755, true);
+                }
+            }
+            if (!is_dir($tmpPath . '/logs')) {
+                mkdir($tmpPath . '/logs', 0755, true);
+            }
+            app()->useStoragePath($tmpPath);
+        }
     }
 
     /**
