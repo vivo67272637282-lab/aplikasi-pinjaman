@@ -18,6 +18,12 @@ $app = new Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+// Vercel: redirect storage ke /tmp karena filesystem read-only
+if (getenv('VERCEL') || isset($_ENV['VERCEL'])) {
+    $tmpStorage = '/tmp/laravel';
+    $app->useStoragePath($tmpStorage);
+}
+
 /*
 | Bind important interfaces to the container so the framework can resolve
 | the HTTP kernel, console kernel and exception handler.
