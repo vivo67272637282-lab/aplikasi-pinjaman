@@ -11,7 +11,9 @@
 /storage/framework/sessions/*
 /storage/framework/testing/*
 /storage/framework/views/*
-/bootstrap/cache/*
-!/bootstrap/cache/.gitignore
+/bootstrap/cache/config.php
+!/bootstrap/cache/packages.php
+!/bootstrap/cache/services.php
+!/bootstrap/cache/routes-v7.php
 /data/*.json
 /composer-install.log
