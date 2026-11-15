@@ -22,6 +22,7 @@ $app = new Application(
 if (getenv('VERCEL') || isset($_ENV['VERCEL'])) {
     $tmpStorage = '/tmp/laravel';
     $app->useStoragePath($tmpStorage);
+    $app->useLangPath(dirname(__DIR__) . '/lang');
 }
 
 /*
