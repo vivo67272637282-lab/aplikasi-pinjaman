@@ -1,0 +1,17 @@
+/vendor/
+/node_modules/
+/infinityfree-upload/
+/infinityfree-upload.zip
+/.env
+/.env.*
+!/.env.example
+/public/storage
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+/data/*.json
+/composer-install.log
