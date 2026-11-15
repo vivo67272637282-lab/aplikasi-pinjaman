@@ -1,4 +1,4 @@
-/vendor/
+# /vendor/ — included for Vercel deploy (no PHP build env)
 /node_modules/
 /infinityfree-upload/
 /infinityfree-upload.zip
